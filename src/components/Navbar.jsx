@@ -1,47 +1,74 @@
-import React from 'react';
+import React from "react";
+import "./Navbar.css";
+import avatar from "/public/images/Logo_Adrian.png";
+import useActiveSection from "../hooks/useActiveSection";
 
 function Navbar() {
-    return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
-        <div className="container">
-          <a className="navbar-brand" href="#">
-            Mi Portfolio
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="colapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="#hero">
-                  Inicio
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#projects">
-                  Proyectos
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#about">
-                  Sobre mí
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#contact">
-                  Contacto
-                </a>
-              </li>
-            </ul>
-          </div>
+  const sections = [
+    { id: "hero", label: "Inicio" },
+    { id: "about", label: "Sobre mí" },
+    { id: "projects", label: "Proyectos" },
+    { id: "contact", label: "Contacto" },
+  ];
+  const sectionIds = sections.map((s) => s.id);
+  const activeId = useActiveSection(sectionIds);
+
+  return (
+    <header className="custom-navbar">
+      <div className="nav-container d-flex justify-content-between align-items-center py-4">
+        <div className="d-flex align-items-center gap-2">
+          <img src={avatar} alt="Logo" className="avatar" />
+          <span className="brand-name fw-bold text-white">Adrián Alcaraz Rodríguez</span>
+          <i className="bi bi-patch-check-fill text-primary"></i>
         </div>
-      </nav>
-    );
+        <nav className="nav-links d-flex gap-4">
+          {sections.map((section, i) => (
+            <a
+              key={section.id}
+              href={`#${section.id}`}
+              className={`nav-link text-white ${
+                activeId === section.id ? "active" : ""
+              }`}
+            >
+              {section.label}
+            </a>
+          ))}
+        </nav>
+        <div className="social-icons d-flex justify-content-center gap-3">
+          <a
+            href="https://github.com/Bota93"
+            title="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+          >
+            <i className="bi bi-github" style={{ fontSize: "2rem" }}></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/adrianalcarazrodriguez/"
+            title="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+          >
+            <i className="bi bi-linkedin" style={{ fontSize: "2rem" }}></i>
+          </a>
+          <a
+            href="mailto:a.alcaraz.rodri@gmail.com"
+            title="Email"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+          >
+            <i
+              className="bi bi-envelope-fill"
+              style={{ fontSize: "2rem" }}
+            ></i>
+          </a>
+        </div>
+      </div>
+    </header>
+  );
 }
 
 export default Navbar;

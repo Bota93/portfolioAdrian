@@ -1,32 +1,64 @@
-import React from 'react';
+import React, {useRef} from "react";
+import emailjs from '@emailjs/browser';
+import "./Contact.css";
 
 function Contact() {
-    return (
-      <section id="contact" className="py-5 bh-white">
-        <div className="container">
-          <h2 className="text-center mb-4">Contacto</h2>
-          <div className="row justify-content-center">
-            <div className="col-md-6">
-              <form>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label">Nombre</label>
-                  <input type="text" className="form-control" id="name" placeholder="Tu nombre"/>
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label">Correo electrónico</label>
-                  <input type="email" className="form-control" id="email" placeholder="ejemplo@ejemplo.com"/>
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="message" className="form-label">Mensaje</label>
-                  <textarea className="form-control" id="message" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
-                </div>
-                <button type="submit" className="btn btn-primary">Enviar</button>
-              </form>
-            </div>
+  // Create a ref to the form
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+
+      emailjs
+        .sendForm(
+          "service_0gl208b",
+          "template_s7xprxb",
+          form.current,
+          "TrFdfpZf1V4kz3thl"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            alert("Mensaje enviado correctamente");
+            form.current.reset();
+          },
+          (error) => {
+            console.log(error.text);
+            alert(
+              "Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde."
+            );
+          }
+        );
+    };
+    
+  return (
+    <section id="contact" className="contact">
+      <h2 className="contact-title">Contacto</h2>
+      <div className="container-contact">
+        <form className="contact-form" ref={form} onSubmit={sendEmail}>
+          <div className="form-fields">
+            <input className="contact-name" type="text" name="name" placeholder="Nombre" required />
+            <input
+              className="contact-email"
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              required
+            />
+            <textarea
+              className="contact-message"
+              name="message"
+              placeholder="Mensaje"
+              required
+            ></textarea>
           </div>
-        </div>
-      </section>
-    );
-}
+          <button className="contact-submit" type="submit">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+};
 
 export default Contact;

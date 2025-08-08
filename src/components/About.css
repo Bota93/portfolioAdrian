@@ -1,0 +1,40 @@
+.about {
+    padding: 6rem 1rem;
+    background-color: #0e0e12;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    background-color: #111118;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 4px 30px rgba(255, 0, 124, 0.2);
+    border: 1px solid #ff007c; /* Fucsia llamativo */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    max-width: 1000px;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.about-image {
+    max-width: 220px;
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid #ff007c; /* Fucsia llamativo */
+    box-shadow: 0 4px 20px rgba(247, 37, 133, 0.5);
+    margin-bottom: 2rem;
+}
+
+.about-text {
+    max-width: 800px;;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}

@@ -1,22 +1,18 @@
 import { useState } from 'react'
 
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import Header from './components/Header';
 import Footer from './components/Footer';
+import Main from './components/Main';
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
+    <body>
+      <Header />
+      <Main />
       <Footer />
+    </body>
     </>
   );
 }
