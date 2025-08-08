@@ -32,11 +32,12 @@ function Contact() {
     };
     
   return (
-    <section id="contact" className="contact">
-      <h2 className="contact-title">Contacto</h2>
-      <div className="container-contact">
-        <form className="contact-form" ref={form} onSubmit={sendEmail}>
-          <div className="form-fields">
+    <>
+      <section id="contact" className="contact">
+        <h2 className="contact-title">Contacto</h2>
+        <div className="container-contact">
+          <form className="contact-form" ref={form} onSubmit={sendEmail}>
+            <div className="form-fields">
             <input className="contact-name" type="text" name="name" placeholder="Nombre" required />
             <input
               className="contact-email"
@@ -58,6 +59,7 @@ function Contact() {
         </form>
       </div>
     </section>
+    </>
   );
 };
 

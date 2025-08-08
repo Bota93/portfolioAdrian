@@ -62,3 +62,20 @@
   border: none;
   border-radius: 10px;
 }
+
+.contact-submit {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #ff007c; /* Color rosa llamativo */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.contact-submit:hover {
+  background-color: #d6006c; /* Color más oscuro al pasar el ratón */
+}

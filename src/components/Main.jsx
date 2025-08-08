@@ -6,12 +6,14 @@ import Contact from "./Contact";
 
 function Main() {
   return (
-    <main className="main">
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-    </main>
+    <>
+      <main className="main">
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+      </main>
+    </>
   );
 }
 
