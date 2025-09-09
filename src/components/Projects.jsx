@@ -18,7 +18,7 @@ const projectList = [
       "Vercel",
       "Render",
     ],
-    livelink: "https://my-fiance-jk6x.vercel.app/",
+    liveLink: "https://my-fiance-jk6x.vercel.app/",
     codeLink: "https://github.com/Bota93/MyFiance",
   },
 ];
