@@ -1,6 +1,15 @@
 /* src/components/Navbar.css */
+
+/* Variables CSS para consistencia (si no están en global.css) */
+:root {
+  --primary-color: #ff007c; /* Fucsia */
+  --secondary-color: #0e0e12; /* Fondo oscuro principal */
+  --text-color: #ffffff;
+  --light-gray: #c4c4c4;
+}
+
 .navbar {
-    background-color: transparent; /* Transparente por defecto */
+    background-color: transparent !important; /* Empezamos con transparente, !important para asegurar */
     height: 80px;
     display: flex;
     justify-content: center;
@@ -9,30 +18,32 @@
     position: fixed; /* Fijo en la parte superior */
     top: 0;
     width: 100%;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición para el cambio de color y sombra */
-    box-shadow: 0 0 0 rgba(0,0,0,0); /* Sin sombra por defecto */
+    z-index: 1000; /* Prioridad alta para que esté encima de todo */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+    box-shadow: none; /* Sin sombra por defecto */
+    /* Efecto moderno: desenfocar el contenido de abajo. Funciona bien sobre fondos transparentes. */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Compatibilidad con Safari */
 }
 
 /* Estilo cuando se hace scroll */
 .navbar.scrolled {
-    background-color: rgba(14, 14, 18, 0.95); /* Fondo oscuro semitransparente al hacer scroll */
+    background-color: rgba(14, 14, 18, 0.95) !important; /* Fondo oscuro semitransparente al hacer scroll */
     box-shadow: 0 4px 15px rgba(255, 0, 124, 0.3); /* Sombra fucsia */
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    max-width: 1200px;
+    justify-content: space-between; /* Empuja logo a un lado, menú al otro */
+    align-items: center; /* Centra verticalmente */
+    height: 100%;
+    max-width: 1200px; /* Ancho máximo para el contenido */
     width: 100%;
-    padding: 0 20px;
+    padding: 0 20px; /* Padding lateral */
 }
 
 .navbar-brand {
     color: var(--text-color);
-    justify-self: start;
     cursor: pointer;
     text-decoration: none;
     font-size: 1.8rem;
@@ -44,13 +55,13 @@
 }
 
 .navbar-brand:hover {
-    color: var(--primary-color); /* Color fucsia al pasar el ratón */
+    color: var(--primary-color); /* Fucsia al pasar el ratón */
 }
 
 .navbar-brand .logo-img {
     height: 40px; /* Tamaño del logo */
-    border-radius: 50%; /* Si quieres que sea circular */
-    border: 2px solid var(--primary-color); /* Borde fucsia */
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
     box-shadow: 0 0 10px rgba(255, 0, 124, 0.5);
     transition: transform 0.3s ease;
 }
@@ -60,27 +71,30 @@
 }
 
 .brand-text {
-    display: block;
+    display: block; /* Asegura que el texto siempre sea visible */
 }
 
+/* Menú de navegación (Desktop) */
 .nav-menu {
     display: flex;
     list-style: none;
     text-align: center;
-    margin-bottom: 0;
-    padding-left: 0; /* Quitar padding por defecto de ul */
+    margin: 0; /* Reinicia márgenes */
+    padding: 0; /* Reinicia padding */
+    align-items: center;
 }
 
 .nav-item {
-    height: 80px;
+    height: 80px; /* Altura de cada ítem igual a la del navbar */
     display: flex;
     align-items: center;
+    margin-left: 25px; /* Espacio entre ítems */
 }
 
 .nav-link {
     color: var(--text-color);
     text-decoration: none;
-    padding: 0 1rem;
+    padding: 0 5px; /* Padding interno del enlace */
     height: 100%;
     display: flex;
     align-items: center;
@@ -90,17 +104,18 @@
 
 .nav-link:hover {
     color: var(--primary-color);
-    border-bottom: 3px solid var(--primary-color); /* Subrayado fucsia al pasar el ratón */
+    border-bottom: 3px solid var(--primary-color); /* Subrayado fucsia */
 }
 
-/* Estilo para el enlace activo (react-scroll añade la clase 'active') */
+/* Estilo para el enlace activo (clase añadida por react-scroll) */
 .nav-link.active {
     color: var(--primary-color);
     border-bottom: 3px solid var(--primary-color);
 }
 
+/* Icono de menú hamburguesa (Oculto en desktop) */
 .menu-icon {
-    display: none; /* Oculto por defecto en desktop */
+    display: none;
     font-size: 1.8rem;
     cursor: pointer;
     color: var(--text-color);
@@ -111,7 +126,7 @@
 }
 
 .menu-icon .bi-x {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Color de la X al abrir el menú */
 }
 
 
@@ -121,32 +136,34 @@
         padding: 0 15px;
     }
 
+    /* Oculta el menú normal y lo transforma en overlay */
     .nav-menu {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100vh; /* Ocupa toda la altura de la vista */
+        height: 100vh; /* Ocupa toda la altura de la vista en móvil */
         position: absolute;
-        top: 80px; /* Debajo del Navbar */
-        left: -100%; /* Oculto por defecto */
-        opacity: 1;
-        transition: all 0.5s ease;
-        background-color: var(--secondary-color); /* Fondo oscuro del menú móvil */
+        top: 80px; /* Justo debajo del navbar */
+        left: -100%; /* Oculto por defecto, a la izquierda */
+        opacity: 0; /* Transparente por defecto */
+        transition: all 0.5s ease-in-out;
+        background-color: var(--secondary-color); /* Fondo oscuro para el menú móvil */
         z-index: 999;
         padding: 20px 0;
-        align-items: center; /* Centrar items en móvil */
+        align-items: center; /* Centra los items verticalmente */
+        justify-content: flex-start; /* Alinea los items al inicio del menú */
     }
 
     .nav-menu.active {
-        left: 0; /* Muestra el menú */
-        opacity: 1;
-        transition: all 0.5s ease;
+        left: 0; /* Muestra el menú al 0% */
+        opacity: 1; /* Se hace visible */
     }
 
     .nav-item {
         width: 100%;
         height: auto;
         padding: 15px 0;
+        margin-left: 0; /* Quita el margen lateral en móvil */
     }
 
     .nav-link {
@@ -157,6 +174,7 @@
         font-size: 1.5rem;
     }
 
+    /* Muestra el icono de hamburguesa en móvil */
     .menu-icon {
         display: block;
     }
