@@ -1,71 +1,95 @@
-/* Global CSS styles */
-:root {
-  --bg-dark: #121019; /* Negro con subtono púrpura */
-}
+/* src/global.css */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-html {
-  scroll-behavior: smooth;
-   background-color: #0e0e12;
+:root {
+  --primary-color: #ff007c; /* Nuestro fucsia */
+  --secondary-color: #0e0e12; /* Fondo oscuro principal */
+  --card-bg-color: #111118; /* Fondo de tarjetas */
+  --text-color: #ffffff;
+  --light-gray: #c4c4c4;
 }
 
 body {
+  font-family: 'Arial', sans-serif; /* O la fuente que uses en tu proyecto */
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-dark);
+  padding: 0;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  overflow-x: hidden; /* Evita scroll horizontal indeseado */
 }
 
-main {
-   background-color: #0e0e12;
-}
-
-.navbar-nav {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.navbar-item {
-  text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  font-weight: normal;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 p {
-  margin: 0;
+  color: var(--light-gray);
+  line-height: 1.6;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: var(--primary-color);
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
-button {
-  border: none;
-  background: none;
-  padding: 0;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Clases de utilidad para centrar texto, si Bootstrap no lo hace */
+.text-center {
+  text-align: center;
+}
+
+/* Clases de utilidad para los botones, si Bootstrap no está completamente integrado */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
   cursor: pointer;
+  border: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #c2005f; /* Fucsia más oscuro */
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: var(--card-bg-color); /* Un gris oscuro */
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 0, 124, 0.1);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Para los iconos sociales si los usas fuera de Bootstrap */
+.social-icon {
+  font-size: 2rem;
+  color: var(--light-gray);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary-color);
+  transform: translateY(-5px);
 }

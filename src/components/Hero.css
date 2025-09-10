@@ -1,81 +1,140 @@
-.hero-section {
-  min-height: 60vh;
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 8rem;
-  background-color: #0e0e12;
-  color: white;
-  display: block;
-  padding-top: calc(4rem + 50px);
-  padding-bottom: 5rem;
+/* src/components/Hero.css */
+.hero {
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background-color: var(--secondary-color); /* Fondo oscuro principal */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Para animaciones o elementos que puedan salirse */
+  text-align: center; /* Centrar todo el texto */
 }
 
-.hero-intro {
-  color: #ff007c;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  text-shadow: 0 0 4px rgba(255, 0, 124, 0.3);
+.hero-container {
+  z-index: 2; /* Asegura que el contenido esté por encima de posibles fondos */
+  max-width: 900px;
+  padding: 0 1rem;
 }
 
-.hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  color: #ccc;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.hero-button {
-  background-color: #ff007c;
-  color: white;
-  border: none;
-  padding: 12px 24px;
+.hero h1 {
+  font-size: 4.5rem; /* Tamaño grande para el nombre */
   font-weight: bold;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  opacity: 0; /* Para animación de entrada */
+  transform: translateY(20px); /* Para animación de entrada */
+  animation: fadeInDown 1s ease forwards;
+  animation-delay: 0.2s;
 }
 
-.hero-button:hover {
-  background-color: #e6006e;
-}
-
-.hero-quote {
-  font-style: italic;
-  font-size: 1.5rem;
-  color: #dddddd;
-  margin-bottom: 2rem;
-  margin-top: -2rem;
-  text-align: center;
-  animation: fadeInUp 1s ease-out forwards;
+.hero h2 {
+  font-size: 2.2rem; /* Tamaño para el subtítulo */
+  color: var(--light-gray);
+  margin-bottom: 2.5rem;
+  line-height: 1.4;
   opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInDown 1s ease forwards;
+  animation-delay: 0.5s;
 }
 
-.quote-author {
-  display: block;
-  margin-top: 0.5rem;
-  font-weight: bold;
-  color: #ff007c;
-  font-size: 1rem;
+.hero h2 .highlight {
+  color: var(--primary-color); /* Color fucsia para la parte destacada */
+  font-weight: 700;
 }
 
-/* Animación */
-@keyframes fadeInUp {
+.cta-buttons {
+  display: flex;
+  justify-content: center; /* Centrar los botones */
+  gap: 1.5rem; /* Espacio entre los botones */
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.8s;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center; /* Centrar los iconos */
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1.1s;
+}
+
+.social-links a {
+  font-size: 2.5rem; /* Tamaño de los iconos */
+  color: var(--light-gray);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+  transform: translateY(-8px); /* Efecto de flotar */
+}
+
+/* Keyframes para las animaciones de entrada */
+@keyframes fadeInDown {
   from {
-    transform: translateY(20px);
     opacity: 0;
+    transform: translateY(-20px);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* --- Responsividad para Hero --- */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto; /* Altura automática en móviles */
+    padding: 80px 1rem 40px 1rem; /* Padding para que el contenido no toque el navbar */
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+  .cta-buttons {
+    flex-direction: column; /* Apilar botones */
+    gap: 1rem;
+  }
+  .cta-buttons .btn {
+    width: 80%; /* Hacer los botones más anchos */
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+}
