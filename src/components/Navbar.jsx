@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll";
-import "./Navbar.css";
-import Logo_Adrian from "/src/images/Logo_Adrian.png";
+import { Link } from "react-scroll"; // Importa Link de react-scroll
+import "./Navbar.css"; // Importa el CSS de la Navbar
+import Logo_Adrian from "/src/images/Logo_Adrian.png"; // Asegúrate de que esta ruta sea correcta
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Estado para el menú móvil
+  const [isScrolled, setIsScrolled] = useState(false); // Estado para cambiar el Navbar al hacer scroll
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Efecto para cambiar el color del Navbar al hacer scroll
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
+        // Si el scroll es más de 50px
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -40,10 +42,10 @@ function Navbar() {
         >
           <img
             src={Logo_Adrian}
-            alt="Adrián Botana Logo"
+            alt="Adrián Alcaraz Rodríguez Logo"
             className="logo-img"
           />
-          <span className="brand-text">Adrián Botana</span>
+          <span className="brand-text">Adrián Alcaraz Rodríguez</span>
         </Link>
 
         {/* Botón de Hamburguesa para Móviles */}
