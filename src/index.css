@@ -1,6 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-/* Variables CSS */
+/* Variables CSS (duplicadas para asegurar que existan si hay problemas de carga) */
 :root {
   --primary-color: #ff007c; /* Nuestro fucsia */
   --secondary-color: #0e0e12; /* Fondo oscuro principal */
@@ -9,7 +9,15 @@
   --light-gray: #c4c4c4;
 }
 
-/* Reinicio universal básico */
+/* Reinicio universal más robusto, incluyendo html y body */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* ¡IMPORTANTE! Asegura que html y body ocupen toda la altura */
+  width: 100%; /* Asegura que ocupen todo el ancho */
+  box-sizing: border-box;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -45,8 +53,8 @@ p {
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
-  text-decoration: none; /* Asegurar que no tienen subrayado */
-  display: inline-block; /* Para que el padding y margen funcionen bien */
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-primary {
