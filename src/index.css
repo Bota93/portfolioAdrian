@@ -1,39 +1,36 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-/* Colores directos */
-/* --primary-color: #ff007c;  Fucsia */
-/* --secondary-color: #0e0e12;  Fondo oscuro principal */
-/* --card-bg-color: #111118;  Fondo de tarjetas */
-/* --text-color: #ffffff; */
-/* --light-gray: #c4c4c4; */
-
-
-/* Reinicio universal más robusto, incluyendo html y body */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%; 
-  width: 100%; /* Asegura que ocupen todo el ancho */
-  box-sizing: border-box;
+/* ==================================== */
+/* === DECLARACIÓN DE VARIABLES CSS === */
+/* ==================================== */
+:root {
+  --primary-color: #ff007c; /* Fucsia */
+  --secondary-color: #0e0e12; /* Fondo oscuro principal */
+  --card-bg-color: #111118; /* Fondo de tarjetas */
+  --text-color: #ffffff;    /* Color de texto blanco */
+  --light-gray: #c4c4c4;    /* Gris claro */
 }
 
-* {
+* { /* Reinicio básico para todos los elementos */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arial', sans-serif; /* Puedes cambiar esto */
-  background-color: #0e0e12; /* Fondo oscuro principal */
-  color: #ffffff; /* Color de texto blanco */
-  overflow-x: hidden; /* Evita scroll horizontal */
-  line-height: 1.6;
+  font-family: 'Arial', sans-serif; /* Fuente base */
+  background-color: var(--secondary-color) !important; /* Fondo oscuro principal FORZADO */
+  color: var(--text-color) !important; /* Color de texto blanco FORZADO */
+  line-height: 1.6; /* Altura de línea para legibilidad */
 }
+
+/* ============================ */
+/* === ESTILOS BASE GENERALES === */
+/* ============================ */
 
 /* Estilos de encabezados */
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff; /* Color de texto blanco */
+  color: var(--text-color) !important; /* Color de texto blanco FORZADO */
   margin-top: 0;
   margin-bottom: 0.5rem;
   line-height: 1.2;
@@ -41,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Estilos de párrafo */
 p {
-  color: #c4c4c4; /* Gris claro */
+  color: var(--light-gray) !important; /* Gris claro FORZADO */
 }
 
 /* Estilos genéricos para botones (si se usan fuera de componentes específicos) */
@@ -57,24 +54,24 @@ p {
 }
 
 .btn-primary {
-  background-color: #ff007c; /* Fucsia */
-  color: white;
+  background-color: var(--primary-color) !important;
+  color: var(--text-color) !important;
 }
 
 .btn-primary:hover {
-  background-color: #c2005f; /* Fucsia más oscuro */
+  background-color: #c2005f !important; /* Fucsia más oscuro */
   transform: scale(1.05);
 }
 
 .btn-secondary {
-  background-color: #111118; /* Fondo de tarjetas */
-  color: #ff007c; /* Fucsia */
-  border: 1px solid #ff007c; /* Fucsia */
+  background-color: var(--card-bg-color) !important;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--primary-color) !important;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 0, 124, 0.1);
-  color: white;
+  background-color: rgba(255, 0, 124, 0.1) !important;
+  color: var(--text-color) !important;
   transform: scale(1.05);
 }
 
@@ -98,11 +95,11 @@ p {
 /* Para los iconos sociales (si se usan sin clases específicas de componentes) */
 .social-icon {
   font-size: 2rem;
-  color: #c4c4c4; /* Gris claro */
+  color: var(--light-gray) !important;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icon:hover {
-  color: #ff007c; /* Fucsia */
+  color: var(--primary-color) !important;
   transform: translateY(-5px);
 }
