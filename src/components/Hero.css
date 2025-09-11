@@ -1,7 +1,7 @@
 /* src/components/Hero.css */
 .hero {
   height: 100vh; /* Ocupa toda la altura de la pantalla */
-  background-color: var(--secondary-color); /* Fondo oscuro principal */
+  background-color: #0e0e12; /* Fondo oscuro principal */
   position: relative;
   display: flex;
   justify-content: center;
@@ -39,7 +39,7 @@
 }
 
 .hero h2 .highlight {
-  color: var(--primary-color); /* Color fucsia para la parte destacada */
+  color: #ff007c; /* Color fucsia para la parte destacada */
   font-weight: 700;
 }
 
@@ -66,12 +66,12 @@
 
 .social-links a {
   font-size: 2.5rem; /* Tamaño de los iconos */
-  color: var(--light-gray);
+  color: #c4c4c4; /* Gris claro */
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover {
-  color: var(--primary-color);
+  color: #ff007c; /* Fucsia */
   transform: translateY(-8px); /* Efecto de flotar */
 }
 
