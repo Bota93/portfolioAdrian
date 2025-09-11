@@ -1,57 +1,58 @@
 .navbar {
-    background-color:#ff007c;
+    background-color: var(--primary-color); /* ¡Fucsia sólido, usando la variable! */
     height: 80px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra el navbar-container en el centro horizontal del navbar */
+    align-items: center; /* Centra el navbar-container verticalmente en el navbar */
     font-size: 1.2rem;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
-    box-shadow: none;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Una sombra sutil para darle profundidad */
+
+    /* Eliminamos todas las transiciones de background-color, backdrop-filter y efectos de scroll */
+    transition: box-shadow 0.3s ease; /* Solo transicionamos la sombra si se desea */
 }
 
-.navbar.scrolled { /* La clase 'scrolled' es normal, no de módulo */
-    background-color: rgba(14, 14, 18, 0.95);
-    box-shadow: 0 4px 15px rgba(255, 0, 124, 0.3);
-}
+/* Si el Navbar es siempre fucsia, esta regla es innecesaria para el fondo */
+/* .navbar.scrolled {
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+} */
 
 .navbar-container {
     max-width: 1200px;
     width: 100%;
-    height: 100%;
+    height: 100%; /* Ocupa la altura completa del navbar */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* ¡Clave! Logo izquierda, menú derecha */
+    align-items: center; /* Centra verticalmente el logo y el menú */
     padding: 0 20px;
 }
 
 .navbar-brand {
-    color: #ffffff; /* Blanco */
+    color: var(--text-color); /* Texto blanco para el logo */
     font-size: 1.8rem;
     font-weight: bold;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px; /* Espacio entre el logo y el texto del brand */
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .navbar-brand:hover {
-    color: #ff007c; /* Fucsia */
+    color: var(--light-gray); /* Gris claro al pasar el ratón por el logo */
 }
 
-.navbar-brand .logo-img { /* Selector original, no de módulo */
+.navbar-brand .logo-img {
     height: 40px;
     border-radius: 50%;
-    border: 2px solid #ff007c; /* Fucsia */
-    box-shadow: 0 0 10px rgba(255, 0, 124, 0.5);
+    border: 2px solid var(--text-color); /* Borde blanco para el logo */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra blanca para el logo */
     transition: transform 0.3s ease;
 }
 
@@ -63,48 +64,51 @@
     display: block;
 }
 
+/* Menú de navegación (Desktop) */
 .nav-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    height: 100%;
+    display: flex; /* ¡Clave! Pone los items del menú en una fila */
+    list-style: none; /* Quita los puntos de la lista */
+    margin: 0; /* Reinicia márgenes */
+    padding: 0; /* Reinicia padding */
+    align-items: center; /* Centra los ítems del menú verticalmente */
+    height: 100%; /* Ocupa la altura total del navbar-container */
+    /* Puedes usar 'gap: 25px;' aquí para espaciar si tu navegador lo soporta y prefieres no usar margin-left */
 }
 
 .nav-item {
-    height: 100%;
+    height: 100%; /* Ocupa la altura del padre (nav-menu) */
     display: flex;
-    align-items: center;
-    margin-left: 25px;
+    align-items: center; /* Centra el contenido del item (el nav-link) */
+    margin-left: 25px; /* Espacio entre los ítems del menú */
 }
 
 .nav-link {
-    color: #ffffff; /* Blanco */
+    color: var(--text-color); /* Blanco para los enlaces */
     text-decoration: none;
-    padding: 0 5px;
-    height: 100%;
-    display: flex;
+    padding: 0 5px; /* Padding interno del enlace para el área de clic/hover */
+    height: 100%; /* Ocupa la altura del nav-item */
+    display: flex; /* Asegura que el texto esté centrado verticalmente dentro del padding */
     align-items: center;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #ff007c; /* Fucsia */
-    border-bottom: 3px solid #ff007c; /* Fucsia */
+    color: var(--light-gray); /* Gris claro para el hover de los enlaces */
+    border-bottom: 3px solid var(--text-color); /* Subrayado blanco al hover */
 }
 
-.nav-link.active { /* Selector original */
-    color: #ff007c; /* Fucsia */
-    border-bottom: 3px solid #ff007c; /* Fucsia */
+.nav-link.active {
+    color: var(--light-gray); /* Gris claro para el enlace activo */
+    border-bottom: 3px solid var(--text-color); /* Subrayado blanco para el activo */
 }
 
+/* Icono de menú hamburguesa (Oculto en desktop) */
 .menu-icon {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
-    color: #ffffff; /* Blanco */
+    color: var(--text-color); /* Blanco para el icono */
 }
 
 .menu-icon .bi {
@@ -112,7 +116,7 @@
 }
 
 .menu-icon .bi-x {
-    color: #ff007c; /* Fucsia */
+    color: var(--text-color); /* Blanco para la X en móvil */
 }
 
 
@@ -131,7 +135,7 @@
         left: -100%;
         opacity: 0;
         transition: all 0.5s ease-in-out;
-        background-color: #0e0e12; /* Fondo oscuro principal */
+        background-color: var(--primary-color); /* El Navbar móvil también será fucsia */
         z-index: 999;
         padding: 20px 0;
         align-items: center;
