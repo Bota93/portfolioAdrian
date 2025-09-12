@@ -4,21 +4,23 @@
 /* === DECLARACIÓN DE VARIABLES CSS === */
 /* ==================================== */
 :root {
-  --primary-color: #ff007c; /* Fucsia */
-  --secondary-color: #0e0e12; /* Fondo oscuro principal */
-  --card-bg-color: #111118; /* Fondo de tarjetas */
-  --text-color: #ffffff;    /* Color de texto blanco */
-  --light-gray: #c4c4c4;    /* Gris claro */
+  --primary-color: #56a3a6; /* Tu Aguamarina Principal */
+  --secondary-color: #0f1d2b; /* Azul Oscuro Intenso (fondo casi negro de las profundidades) */
+  --card-bg-color: #1a314a; /* Azul Oscuro Medio (para tarjetas, secciones) */
+  --text-color: #e0f2f7; /* Blanco Azulado Suave (texto principal, simula luz en el agua) */
+  --light-gray: #a0c0d0; /* Gris Azulado Claro (texto secundario, hover de enlaces) */
+  --accent-color: #f8d981; /* Un toque de arena/coral suave para acentos o botones */
 }
 
-* { /* Reinicio básico para todos los elementos */
+* {
+  /* Reinicio básico para todos los elementos */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arial', sans-serif; /* Fuente base */
+  font-family: "Arial", sans-serif; /* Fuente base */
   background-color: var(--secondary-color); /* Fondo oscuro principal FORZADO */
   color: var(--text-color); /* Color de texto blanco FORZADO */
   line-height: 1.6; /* Altura de línea para legibilidad */
@@ -29,7 +31,12 @@ body {
 /* ============================ */
 
 /* Estilos de encabezados */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-color); /* Color de texto blanco FORZADO */
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -88,9 +95,16 @@ p {
 }
 
 /* Utilidades de margen/padding si no usas Bootstrap directamente */
-.mt-4 { margin-top: 1.5rem; }
-.mb-4 { margin-bottom: 1.5rem; }
-.py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+.mt-4 {
+  margin-top: 1.5rem;
+}
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+.py-5 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
 
 /* Para los iconos sociales (si se usan sin clases específicas de componentes) */
 .social-icon {
@@ -110,22 +124,24 @@ p {
 
 /* Para navegadores WebKit (Chrome, Safari, Edge, Opera) */
 ::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra de scroll vertical */
-    height: 12px; /* Alto de la barra de scroll horizontal */
+  width: 12px; /* Ancho de la barra de scroll vertical */
+  height: 12px; /* Alto de la barra de scroll horizontal */
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-color); /* Color fucsia para el "pulgar" (lo que arrastras) */
-    border-radius: 10px; /* Bordes redondeados para el pulgar */
-    border: 3px solid var(--secondary-color); /* Un pequeño borde para separarlo de la pista */
+  background: var(
+    --primary-color
+  ); /* Color fucsia para el "pulgar" (lo que arrastras) */
+  border-radius: 10px; /* Bordes redondeados para el pulgar */
+  border: 3px solid var(--secondary-color); /* Un pequeño borde para separarlo de la pista */
 }
 
 /* Para el pulgar al pasar el ratón por encima */
 ::-webkit-scrollbar-thumb:hover {
-    background: #c2005f; /* Un tono un poco más oscuro o vibrante al hacer hover */
+  background: #c2005f; /* Un tono un poco más oscuro o vibrante al hacer hover */
 }
 
 /* Para Firefox (compatibilidad limitada, pero es buena práctica añadirlo) */
 html {
-    scrollbar-color: var(--primary-color) var(--secondary-color); /* pulgar color pista */
-    scrollbar-width: thin; /* 'auto' | 'thin' | 'none' */
+  scrollbar-color: var(--primary-color) var(--secondary-color); /* pulgar color pista */
+  scrollbar-width: thin; /* 'auto' | 'thin' | 'none' */
 }
