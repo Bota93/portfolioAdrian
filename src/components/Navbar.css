@@ -1,58 +1,58 @@
 .navbar {
-    background-color: var(--primary-color); /* ¡Fucsia sólido, usando la variable! */
-    height: 80px;
-    display: flex;
-    justify-content: center; /* Centra el navbar-container en el centro horizontal del navbar */
-    align-items: center; /* Centra el navbar-container verticalmente en el navbar */
+    background-color: var(--primary-color) !important; /* Fondo fucsia sólido, ¡FORZADO! */
+    height: 80px !important; /* Altura forzada */
+    display: flex !important; /* Display flex forzado */
+    justify-content: center !important; /* Centra el navbar-container */
+    align-items: center !important; /* Centra verticalmente el navbar-container */
     font-size: 1.2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Una sombra sutil para darle profundidad */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave para profundidad */
 
-    /* Eliminamos todas las transiciones de background-color, backdrop-filter y efectos de scroll */
-    transition: box-shadow 0.3s ease; /* Solo transicionamos la sombra si se desea */
+    /* Eliminamos transiciones de background-color, backdrop-filter y el efecto 'scrolled' */
+    transition: none !important; /* Sin transiciones para el color de fondo si es fijo */
 }
 
-/* Si el Navbar es siempre fucsia, esta regla es innecesaria para el fondo */
+/* Si el Navbar es sólido y fijo, esta regla es innecesaria para el fondo */
 /* .navbar.scrolled {
-    background-color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
 } */
 
 .navbar-container {
     max-width: 1200px;
     width: 100%;
-    height: 100%; /* Ocupa la altura completa del navbar */
-    display: flex;
-    justify-content: space-between; /* ¡Clave! Logo izquierda, menú derecha */
-    align-items: center; /* Centra verticalmente el logo y el menú */
-    padding: 0 20px;
+    height: 100% !important; /* Ocupa la altura completa del navbar, ¡FORZADO! */
+    display: flex !important;
+    justify-content: space-between !important; /* Logo izquierda, menú derecha, ¡FORZADO! */
+    align-items: center !important; /* Centra verticalmente logo y menú, ¡FORZADO! */
+    padding: 0 20px !important;
 }
 
 .navbar-brand {
-    color: var(--text-color); /* Texto blanco para el logo */
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espacio entre el logo y el texto del brand */
+    color: var(--text-color) !important; /* Texto blanco para el logo, ¡FORZADO! */
+    font-size: 1.8rem !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important; /* Espacio entre el logo y el texto del brand */
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .navbar-brand:hover {
-    color: var(--light-gray); /* Gris claro al pasar el ratón por el logo */
+    color: var(--light-gray) !important; /* Gris claro al pasar el ratón por el logo */
 }
 
 .navbar-brand .logo-img {
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid var(--text-color); /* Borde blanco para el logo */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra blanca para el logo */
+    height: 40px !important;
+    border-radius: 50% !important;
+    border: 2px solid var(--text-color) !important; /* Borde blanco para el logo */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important; /* Sombra blanca para el logo */
     transition: transform 0.3s ease;
 }
 
@@ -61,54 +61,54 @@
 }
 
 .brand-text {
-    display: block;
+    display: block !important;
 }
 
-/* Menú de navegación (Desktop) */
+/* Menú de navegación (Desktop) - ¡Ajustes Críticos de Alineación! */
 .nav-menu {
-    display: flex; /* ¡Clave! Pone los items del menú en una fila */
-    list-style: none; /* Quita los puntos de la lista */
-    margin: 0; /* Reinicia márgenes */
-    padding: 0; /* Reinicia padding */
-    align-items: center; /* Centra los ítems del menú verticalmente */
-    height: 100%; /* Ocupa la altura total del navbar-container */
-    /* Puedes usar 'gap: 25px;' aquí para espaciar si tu navegador lo soporta y prefieres no usar margin-left */
+    display: flex !important; /* ¡Clave! Pone los items del menú en una fila, ¡FORZADO! */
+    list-style: none !important; /* Quita los puntos de la lista, ¡FORZADO! */
+    margin: 0 !important; /* Reinicia márgenes, ¡FORZADO! */
+    padding: 0 !important; /* Reinicia padding, ¡FORZADO! */
+    align-items: center !important; /* Centra los ítems del menú verticalmente, ¡FORZADO! */
+    height: 100% !important; /* Ocupa la altura total del navbar-container, ¡FORZADO! */
+    /* gap: 25px; */ /* Puedes probar con 'gap' si margin-left no funciona perfectamente, pero es menos compatible */
 }
 
 .nav-item {
-    height: 100%; /* Ocupa la altura del padre (nav-menu) */
-    display: flex;
-    align-items: center; /* Centra el contenido del item (el nav-link) */
-    margin-left: 25px; /* Espacio entre los ítems del menú */
+    height: 100% !important; /* Ocupa la altura del padre (nav-menu), ¡FORZADO! */
+    display: flex !important;
+    align-items: center !important; /* Centra el contenido del item (el nav-link), ¡FORZADO! */
+    margin-left: 25px !important; /* Espacio entre los ítems del menú, ¡FORZADO! */
 }
 
 .nav-link {
-    color: var(--text-color); /* Blanco para los enlaces */
-    text-decoration: none;
-    padding: 0 5px; /* Padding interno del enlace para el área de clic/hover */
-    height: 100%; /* Ocupa la altura del nav-item */
-    display: flex; /* Asegura que el texto esté centrado verticalmente dentro del padding */
-    align-items: center;
-    font-weight: 500;
+    color: var(--text-color) !important; /* Blanco para los enlaces, ¡FORZADO! */
+    text-decoration: none !important;
+    padding: 0 5px !important; /* Padding interno del enlace para el área de clic/hover, ¡FORZADO! */
+    height: 100% !important; /* Ocupa la altura del nav-item, ¡FORZADO! */
+    display: flex !important; /* Asegura que el texto esté centrado verticalmente dentro del padding, ¡FORZADO! */
+    align-items: center !important;
+    font-weight: 500 !important;
     transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-    color: var(--light-gray); /* Gris claro para el hover de los enlaces */
-    border-bottom: 3px solid var(--text-color); /* Subrayado blanco al hover */
+    color: var(--light-gray) !important; /* Gris claro para el hover de los enlaces */
+    border-bottom: 3px solid var(--text-color) !important; /* Subrayado blanco al hover */
 }
 
 .nav-link.active {
-    color: var(--light-gray); /* Gris claro para el enlace activo */
-    border-bottom: 3px solid var(--text-color); /* Subrayado blanco para el activo */
+    color: var(--light-gray) !important; /* Gris claro para el enlace activo */
+    border-bottom: 3px solid var(--text-color) !important; /* Subrayado blanco para el activo */
 }
 
 /* Icono de menú hamburguesa (Oculto en desktop) */
 .menu-icon {
-    display: none;
-    font-size: 1.8rem;
+    display: none !important;
+    font-size: 1.8rem !important;
     cursor: pointer;
-    color: var(--text-color); /* Blanco para el icono */
+    color: var(--text-color) !important;
 }
 
 .menu-icon .bi {
@@ -116,61 +116,61 @@
 }
 
 .menu-icon .bi-x {
-    color: var(--text-color); /* Blanco para la X en móvil */
+    color: var(--text-color) !important; /* Blanco para la X en móvil */
 }
 
 
 /* --- Media Queries para Responsividad --- */
 @media (max-width: 768px) {
     .navbar-container {
-        padding: 0 15px;
+        padding: 0 15px !important;
     }
 
     .nav-menu {
-        flex-direction: column;
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: 80px;
-        left: -100%;
-        opacity: 0;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: 100vh !important;
+        position: absolute !important;
+        top: 80px !important;
+        left: -100% !important;
+        opacity: 0 !important;
         transition: all 0.5s ease-in-out;
-        background-color: var(--primary-color); /* El Navbar móvil también será fucsia */
-        z-index: 999;
-        padding: 20px 0;
-        align-items: center;
-        justify-content: flex-start;
+        background-color: var(--primary-color) !important; /* El Navbar móvil también será fucsia */
+        z-index: 999 !important;
+        padding: 20px 0 !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
     }
 
     .nav-menu.active {
-        left: 0;
-        opacity: 1;
+        left: 0 !important;
+        opacity: 1 !important;
     }
 
     .nav-item {
-        width: 100%;
-        height: auto;
-        padding: 15px 0;
-        margin-left: 0;
+        width: 100% !important;
+        height: auto !important;
+        padding: 15px 0 !important;
+        margin-left: 0 !important;
     }
 
     .nav-link {
-        text-align: center;
-        padding: 0.5rem 0;
-        width: 100%;
-        display: block;
-        font-size: 1.5rem;
+        text-align: center !important;
+        padding: 0.5rem 0 !important;
+        width: 100% !important;
+        display: block !important;
+        font-size: 1.5rem !important;
     }
 
     .menu-icon {
-        display: block;
+        display: block !important;
     }
 
     .navbar-brand .logo-img {
-        height: 35px;
+        height: 35px !important;
     }
 
     .navbar-brand .brand-text {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
 }
