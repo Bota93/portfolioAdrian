@@ -44,6 +44,10 @@
     transition: color 0.3s ease;
 }
 
+.navbar-brand .brand-text {
+    color: var(--text-color); /* Texto blanco para el logo, ¡FORZADO! */
+}
+
 .navbar-brand:hover {
     color: var(--light-gray); /* Gris claro al pasar el ratón por el logo */
 }
