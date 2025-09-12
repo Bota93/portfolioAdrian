@@ -16,7 +16,11 @@ function Hero() {
 
         {/* Contenedor para los botones de acción */}
         <div className="cta-buttons mt-4">
-          <a href="/public/CV_AdrianAlcarazRodriguez.pdf" className="btn btn-primary" download>
+          <a
+            href="/public/CV_AdrianAlcarazRodriguez.pdf"
+            className="btn btn-primary"
+            download
+          >
             Descargar CV
           </a>
           <a href="#contact" className="btn btn-secondary">
@@ -27,7 +31,7 @@ function Hero() {
         {/* Contenedor para los iconos de redes sociales */}
         <div className="social-links mt-4">
           <a
-            href="https-tu-linkedin-url"
+            href="https://www.linkedin.com/in/adrianalcarazrodriguez/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -35,7 +39,7 @@ function Hero() {
             <i className="bi bi-linkedin"></i>
           </a>
           <a
-            href="https-tu-github-url"
+            href="https://github.com/Bota93"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
