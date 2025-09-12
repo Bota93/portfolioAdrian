@@ -103,3 +103,29 @@ p {
   color: var(--primary-color);
   transform: translateY(-5px);
 }
+
+/* ==================================== */
+/* === ESTILOS PERSONALIZADOS DE LA BARRA DE SCROLL === */
+/* ==================================== */
+
+/* Para navegadores WebKit (Chrome, Safari, Edge, Opera) */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de scroll vertical */
+    height: 12px; /* Alto de la barra de scroll horizontal */
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color); /* Color fucsia para el "pulgar" (lo que arrastras) */
+    border-radius: 10px; /* Bordes redondeados para el pulgar */
+    border: 3px solid var(--secondary-color); /* Un pequeño borde para separarlo de la pista */
+}
+
+/* Para el pulgar al pasar el ratón por encima */
+::-webkit-scrollbar-thumb:hover {
+    background: #c2005f; /* Un tono un poco más oscuro o vibrante al hacer hover */
+}
+
+/* Para Firefox (compatibilidad limitada, pero es buena práctica añadirlo) */
+html {
+    scrollbar-color: var(--primary-color) var(--secondary-color); /* pulgar color pista */
+    scrollbar-width: thin; /* 'auto' | 'thin' | 'none' */
+}
