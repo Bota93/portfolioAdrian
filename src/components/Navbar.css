@@ -13,14 +13,14 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave para profundidad */
 
     /* Eliminamos transiciones de background-color, backdrop-filter y el efecto 'scrolled' */
-    transition: none; /* Sin transiciones para el color de fondo si es fijo */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Si el Navbar es sólido y fijo, esta regla es innecesaria para el fondo */
-/* .navbar.scrolled {
-    background-color: var(--primary-color) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
-} */
+.navbar.scrolled {
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
 
 .navbar .navbar-container {
     max-width: 1200px;
