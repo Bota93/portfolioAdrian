@@ -1,5 +1,5 @@
 .navbar {
-    background-color: var(--primary-color); /* Fondo fucsia sólido, ¡FORZADO! */
+    background-color: var(--primary-color); /* Fondo fucsia sólido,  */
     height: 100%; /* Altura forzada */
     display: flex; /* Display flex forzado */
     justify-content: center; /* Centra el navbar-container */
@@ -25,15 +25,15 @@
 .navbar .navbar-container {
     max-width: 1200px;
     width: 100%;
-    height: 100%; /* Ocupa la altura completa del navbar, ¡FORZADO! */
+    height: 100%; /* Ocupa la altura completa del navbar,  */
     display: flex;
-    justify-content: space-between; /* Logo izquierda, menú derecha, ¡FORZADO! */
-    align-items: center; /* Centra verticalmente logo y menú, ¡FORZADO! */
+    justify-content: space-between; /* Logo izquierda, menú derecha,  */
+    align-items: center; /* Centra verticalmente logo y menú,  */
     padding: 0 20px;
 }
 
 .navbar-brand {
-    color: var(--text-color); /* Texto blanco para el logo, ¡FORZADO! */
+    color: var(--text-color); /* Texto blanco para el logo,  */
     font-size: 1.8rem;
     font-weight: bold;
     text-decoration: none;
@@ -45,7 +45,7 @@
 }
 
 .navbar-brand .brand-text {
-    color: var(--text-color); /* Texto blanco para el logo, ¡FORZADO! */
+    color: var(--text-color); /* Texto blanco para el logo,  */
 }
 
 .navbar-brand:hover {
@@ -70,28 +70,29 @@
 
 /* Menú de navegación (Desktop) - ¡Ajustes Críticos de Alineación! */
 .nav-menu {
-    display: flex; /* ¡Clave! Pone los items del menú en una fila, ¡FORZADO! */
-    list-style: none; /* Quita los puntos de la lista, ¡FORZADO! */
-    margin: 0; /* Reinicia márgenes, ¡FORZADO! */
-    padding: 0; /* Reinicia padding, ¡FORZADO! */
-    align-items: center; /* Centra los ítems del menú verticalmente, ¡FORZADO! */
-    height: 100%; /* Ocupa la altura total del navbar-container, ¡FORZADO! */
+    display: flex; /* ¡Clave! Pone los items del menú en una fila,  */
+    list-style: none; /* Quita los puntos de la lista,  */
+    margin: 0; /* Reinicia márgenes,  */
+    padding: 0; /* Reinicia padding,  */
+    align-items: center; /* Centra los ítems del menú verticalmente,  */
+    height: 100%; /* Ocupa la altura total del navbar-container,  */
     /* gap: 25px; */ /* Puedes probar con 'gap' si margin-left no funciona perfectamente, pero es menos compatible */
 }
 
 .navbar .navbar-container .nav-menu .nav-item {
-    height: 100%; /* Ocupa la altura del padre (nav-menu), ¡FORZADO! */
+    color: var(--text-color); /* Blanco para los ítems del menú */
+    height: 100%; /* Ocupa la altura del padre (nav-menu),  */
     display: flex;
-    align-items: center; /* Centra el contenido del item (el nav-link), ¡FORZADO! */
-    margin-left: 25px; /* Espacio entre los ítems del menú, ¡FORZADO! */
+    align-items: center; /* Centra el contenido del item (el nav-link),  */
+    margin-left: 25px; /* Espacio entre los ítems del menú,  */
 }
 
 .nav-link {
-    color: var(--text-color); /* Blanco para los enlaces, ¡FORZADO! */
+    color: var(--text-color); /* Blanco para los enlaces,  */
     text-decoration: none;
-    padding: 0 5px; /* Padding interno del enlace para el área de clic/hover, ¡FORZADO! */
-    height: 100%; /* Ocupa la altura del nav-item, ¡FORZADO! */
-    display: flex; /* Asegura que el texto esté centrado verticalmente dentro del padding, ¡FORZADO! */
+    padding: 0 5px; /* Padding interno del enlace para el área de clic/hover,  */
+    height: 100%; /* Ocupa la altura del nav-item,  */
+    display: flex; /* Asegura que el texto esté centrado verticalmente dentro del padding,  */
     align-items: center;
     font-weight: 500;
     transition: all 0.3s ease;
