@@ -87,24 +87,24 @@
 }
 
 .nav-link {
-    color: var(--text-color) !important; /* Blanco para los enlaces, ¡FORZADO! */
-    text-decoration: none !important;
-    padding: 0 5px !important; /* Padding interno del enlace para el área de clic/hover, ¡FORZADO! */
-    height: 100% !important; /* Ocupa la altura del nav-item, ¡FORZADO! */
-    display: flex !important; /* Asegura que el texto esté centrado verticalmente dentro del padding, ¡FORZADO! */
-    align-items: center !important;
-    font-weight: 500 !important;
+    color: var(--text-color); /* Blanco para los enlaces, ¡FORZADO! */
+    text-decoration: none;
+    padding: 0 5px; /* Padding interno del enlace para el área de clic/hover, ¡FORZADO! */
+    height: 100%; /* Ocupa la altura del nav-item, ¡FORZADO! */
+    display: flex; /* Asegura que el texto esté centrado verticalmente dentro del padding, ¡FORZADO! */
+    align-items: center;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-    color: var(--light-gray) !important; /* Gris claro para el hover de los enlaces */
-    border-bottom: 3px solid var(--text-color) !important; /* Subrayado blanco al hover */
+    color: var(--light-gray); /* Gris claro para el hover de los enlaces */
+    border-bottom: 3px solid var(--text-color); /* Subrayado blanco al hover */
 }
 
 .nav-link.active {
-    color: var(--light-gray) !important; /* Gris claro para el enlace activo */
-    border-bottom: 3px solid var(--text-color) !important; /* Subrayado blanco para el activo */
+    color: var(--light-gray); /* Gris claro para el enlace activo */
+    border-bottom: 3px solid var(--text-color); /* Subrayado blanco para el activo */
 }
 
 /* Icono de menú hamburguesa (Oculto en desktop) */
