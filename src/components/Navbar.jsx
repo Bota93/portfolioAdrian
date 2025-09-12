@@ -1,120 +1,107 @@
+// src/components/Navbar.jsx (Versión corregida para el efecto de scroll)
 import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll"; // Importa Link de react-scroll
-import "./Navbar.css"; // Importa el CSS de la Navbar
-import Logo_Adrian from "/src/images/Logo_Adrian.png"; // Asegúrate de que esta ruta sea correcta
+import { Link } from "react-scroll";
+import "./Navbar.css";
+import logo from "../assets/Logo_Adrian.png";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false); // Estado para el menú móvil
-  const [isScrolled, setIsScrolled] = useState(false); // Estado para cambiar el Navbar al hacer scroll
+  const [click, setClick] = useState(false);
+  const [scrolled, setScrolled] = useState(false); // Estado para el scroll
 
-  const changeNavbarOnScroll = () => {
+  // Función para manejar el evento de scroll
+  // === CORRECCIÓN CLAVE AQUÍ: EL NOMBRE DE ESTA FUNCIÓN DEBE COINCIDIR CON EL useEffect ===
+  const changeBackground = () => {
+    // O puedes llamarla changeNavbarOnScroll si prefieres ese nombre
     if (window.scrollY >= 80) {
-      setIsScrolled(true);
+      // Umbral de scroll para activar el efecto
+      setScrolled(true);
     } else {
-      setIsScrolled(false);
+      setScrolled(false);
     }
   };
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  // Efecto para cambiar el color del Navbar al hacer scroll
+  // useEffect para añadir y limpiar el event listener
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        // Si el scroll es más de 50px
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+    // === CORRECCIÓN CLAVE AQUÍ: Asegúrate de que el nombre de la función sea 'changeBackground' ===
+    window.addEventListener("scroll", changeBackground); // Añade el listener al montar
 
-    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", changeBackground); // Limpia el listener al desmontar
     };
-  }, []);
+  }, []); // El array vacío asegura que se ejecute solo una vez al montar y desmontar
 
-  const handleClick = () => setClick(!click);
+  const handleClick = () => setClick(!click); // Asegurémonos de que handleClick está correcto
   const closeMobileMenu = () => setClick(false);
 
   return (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
-        {/* Logo */}
         <Link
-          to="hero" // Enlace al ID de la sección Hero
+          to="hero"
           spy={true}
           smooth={true}
-          offset={-70} // Ajusta si el Navbar fijo oculta parte de la sección
+          offset={-80}
           duration={500}
           className="navbar-brand"
+          onClick={closeMobileMenu}
         >
-          <img
-            src={Logo_Adrian}
-            alt="Adrián Alcaraz Rodríguez Logo"
-            className="logo-img"
-          />
+          <img src={logo} alt="Logo Adrián Alcaraz" className="logo-img" />
           <span className="brand-text">Adrián Alcaraz Rodríguez</span>
         </Link>
-
-        {/* Botón de Hamburguesa para Móviles */}
-        <div className="menu-icon" onClick={toggleMenu}>
-          <i className={isOpen ? "bi bi-x" : "bi bi-list"}></i>{" "}
-          {/* Icono de cruz o hamburguesa */}
+        <div className="menu-icon" onClick={handleClick}>
+          {" "}
+          {/* handleClick debe estar ligado aquí */}
+          <i className={click ? "bi bi-x" : "bi bi-list"} />
         </div>
-
-        {/* Menú de Navegación */}
-        <ul className={`nav-menu ${isOpen ? "active" : ""}`}>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
             <Link
-              to="about" // ID de la sección Sobre mí
+              to="sobre-mi"
               spy={true}
               smooth={true}
-              offset={-70}
+              offset={-80}
               duration={500}
-              onClick={toggleMenu} // Cierra el menú en móvil al hacer clic
               className="nav-link"
+              onClick={closeMobileMenu}
             >
               Sobre mí
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="technologies" // ID de la nueva sección Tecnologías
+              to="tecnologias"
               spy={true}
               smooth={true}
-              offset={-70}
+              offset={-80}
               duration={500}
-              onClick={toggleMenu}
               className="nav-link"
+              onClick={closeMobileMenu}
             >
               Tecnologías
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="projects" // ID de la sección Proyectos
+              to="proyectos"
               spy={true}
               smooth={true}
-              offset={-70}
+              offset={-80}
               duration={500}
-              onClick={toggleMenu}
               className="nav-link"
+              onClick={closeMobileMenu}
             >
               Proyectos
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="contact" // ID de la sección Contacto
+              to="contacto"
               spy={true}
               smooth={true}
-              offset={-70}
+              offset={-80}
               duration={500}
-              onClick={toggleMenu}
               className="nav-link"
+              onClick={closeMobileMenu}
             >
               Contacto
             </Link>
