@@ -1,7 +1,7 @@
 import React, { useState } from "react"; // <--- ASEGÚRATE DE QUE useEffect YA NO ESTÉ AQUÍ
 import { Link } from "react-scroll";
 import "./Navbar.css";
-import logo from "../assets/Logo_Adrian.png";
+import logo from "../images/Logo_Adrian.png";
 
 function Navbar() {
   const [click, setClick] = useState(false);
