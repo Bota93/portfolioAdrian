@@ -7,9 +7,9 @@
   --primary-color: #56a3a6; /* Tu Aguamarina Principal */
   --secondary-color: #0f1d2b; /* Azul Oscuro Intenso (fondo casi negro de las profundidades) */
   --card-bg-color: #1a314a; /* Azul Oscuro Medio (para tarjetas, secciones) */
-  --text-color: #e0f2f7; /* Blanco Azulado Suave (texto principal, simula luz en el agua) */
+  --text-color: #ffffff; /* CAMBIO AQUÍ: Blanco puro para mejor contraste */
   --light-gray: #a0c0d0; /* Gris Azulado Claro (texto secundario, hover de enlaces) */
-  --accent-color: #f8d981; /* Un toque de arena/coral suave para acentos o botones */
+  --accent-color: #f8d981;
 }
 
 * {
