@@ -1,36 +1,36 @@
 .technologies-section {
     padding: 6rem 1rem;
-    background-color: #0e0e12;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
 .technologies-section h2 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: white;
+    color: var(--text-color);
 }
 
 .tech-card {
-    background-color: #111118;
+    background-color: var(--card-bg-color);
     border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(255, 0, 124, 0.2);
-    border: 1px solid #ff007c;
+    box-shadow: 0 4px 30px rgba(86, 163, 166, 0.2);
+    border: 1px solid var(--primary-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tech-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 40px rgba(255, 0, 124, 0.4);
+    box-shadow: 0 8px 40px rgba(86, 163, 166, 0.4)
 }
 
 .tech-card h4 {
-    color: #ff007c;
+    color: var(--primary-color);
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
 .tech-card i {
-    color: #ff007c;
+    color: var(--primary-color);
     transition: transform 0.3s ease;
 }
 
@@ -40,6 +40,6 @@
 
 .tech-card p {
     margin-bottom: 0.5rem;
-    color: #c4c4c4;
+    color: var(--light-gray);
     font-size: 0.95rem;
 }
