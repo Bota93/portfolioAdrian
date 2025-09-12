@@ -1,6 +1,6 @@
 .navbar {
     background-color: var(--primary-color); /* Fondo fucsia sólido, ¡FORZADO! */
-    height: 80px; /* Altura forzada */
+    height: 100%; /* Altura forzada */
     display: flex; /* Display flex forzado */
     justify-content: center; /* Centra el navbar-container */
     align-items: center; /* Centra verticalmente el navbar-container */
