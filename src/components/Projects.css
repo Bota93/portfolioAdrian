@@ -1,42 +1,42 @@
 .projects {
   padding: 6rem 1rem;
-  background-color: #0e0e12;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .projects-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: white;
+  color: var(--text-color);
 }
 
 .project-card {
-  background-color: #111118;
-  border: 1px solid #ff007c;
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--primary-color);
   border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(255, 0, 124, 0.2);
-  color: white;
+  box-shadow: 0 4px 8px rgba(86, 163, 166, 0.2);
+  color: var(--text-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 40px rgba(255, 0, 124, 0.4);
+  box-shadow: 0 8px 40px rgba(86, 163, 166, 0.4);
 }
 
 .project-card .card-img-top {
-  border-bottom: 1px solid #ff007c;
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .project-card .card-title {
-  color: #ff007c;
+  color: var(--primary-color);
   font-weight: bold;
   font-size: 1.5rem;
 }
 
 .project-card .card-text {
-  color: #c4c4c4;
+  color: var(--light-gray);
   font-size: 0.95rem;
   flex-grow: 1;
 }
@@ -48,13 +48,13 @@
 }
 
 .tech-badge {
-  background-color: rgba(255, 0, 124, 0.1);
-  color: #ff007c;
+  background-color: var(--card-bg-color);
+  color: var(--primary-color);
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 500;
-  border: 1px solid rgba(255, 0, 124, 0.3);
+  border: 1px solid 0 8px 40px rgba(86, 163, 166, 0.4);
 }
 
 .project-links {
@@ -69,24 +69,24 @@
 }
 
 .project-links .btn-primary {
-  background-color: #ff007c;
-  border-color: #ff007c;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .project-links .btn-primary:hover {
-  background-color: #c2005f;
-  border-color: #c2005f;
+  background-color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
   transform: scale(1.05);
 }
 
 .project-links .btn-secondary {
   background-color: transparent;
-  border: 1px solid #ff007c;
-  color: #ff007c;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
 .project-links .btn-secondary:hover {
-  background-color: rgba(255, 0, 124, 0.1);
-  color: white;
+  background-color: rgba(86, 163, 166, 0.1);
+  color: var(--text-color);
   transform: scale(1.05);
 }
