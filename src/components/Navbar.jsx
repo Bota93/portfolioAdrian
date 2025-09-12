@@ -7,6 +7,14 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false); // Estado para el menú móvil
   const [isScrolled, setIsScrolled] = useState(false); // Estado para cambiar el Navbar al hacer scroll
 
+  const changeNavbarOnScroll = () => {
+    if (window.scrollY >= 80) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -27,6 +35,9 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
