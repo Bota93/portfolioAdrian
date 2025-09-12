@@ -1,40 +1,17 @@
-// src/components/Navbar.jsx (Versión corregida para el efecto de scroll)
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react"; // <--- ASEGÚRATE DE QUE useEffect YA NO ESTÉ AQUÍ
 import { Link } from "react-scroll";
 import "./Navbar.css";
 import logo from "../assets/Logo_Adrian.png";
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const [scrolled, setScrolled] = useState(false); // Estado para el scroll
 
-  // Función para manejar el evento de scroll
-  // === CORRECCIÓN CLAVE AQUÍ: EL NOMBRE DE ESTA FUNCIÓN DEBE COINCIDIR CON EL useEffect ===
-  const changeBackground = () => {
-    // O puedes llamarla changeNavbarOnScroll si prefieres ese nombre
-    if (window.scrollY >= 80) {
-      // Umbral de scroll para activar el efecto
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
-
-  // useEffect para añadir y limpiar el event listener
-  useEffect(() => {
-    // === CORRECCIÓN CLAVE AQUÍ: Asegúrate de que el nombre de la función sea 'changeBackground' ===
-    window.addEventListener("scroll", changeBackground); // Añade el listener al montar
-
-    return () => {
-      window.removeEventListener("scroll", changeBackground); // Limpia el listener al desmontar
-    };
-  }, []); // El array vacío asegura que se ejecute solo una vez al montar y desmontar
-
-  const handleClick = () => setClick(!click); // Asegurémonos de que handleClick está correcto
+  const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    // === RESTAURAR ESTA LÍNEA A SU ESTADO ORIGINAL ===
+    <nav className="navbar">
       <div className="navbar-container">
         <Link
           to="hero"
@@ -49,8 +26,6 @@ function Navbar() {
           <span className="brand-text">Adrián Alcaraz Rodríguez</span>
         </Link>
         <div className="menu-icon" onClick={handleClick}>
-          {" "}
-          {/* handleClick debe estar ligado aquí */}
           <i className={click ? "bi bi-x" : "bi bi-list"} />
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>

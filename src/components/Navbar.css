@@ -1,5 +1,5 @@
 .navbar {
-    background-color: rgba(255, 0, 124, 0.1); /* Fondo fucsia sólido,  */
+    background-color: var(--primary-color); /* Fondo fucsia sólido,  */
     height: 100%; /* Altura forzada */
     display: flex; /* Display flex forzado */
     justify-content: center; /* Centra el navbar-container */
@@ -12,15 +12,6 @@
     z-index: 1000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave para profundidad */
 
-    /* Eliminamos transiciones de background-color, backdrop-filter y el efecto 'scrolled' */
-    transition: all 0.5s ease-in-out;
-    backdrop-filter: blur(5px);
-}
-
-.navbar.scrolled {
-    background-color: rgba(255, 0, 124, 0.9);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
 }
 
 .navbar .navbar-container {
