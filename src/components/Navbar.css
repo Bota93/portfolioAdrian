@@ -143,7 +143,7 @@
         z-index: 999;
         padding: 20px 0;
         align-items: center;
-        justify-content: flex-start !important;
+        justify-content: flex-start;
     }
 
     .nav-menu.active {

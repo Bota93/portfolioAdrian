@@ -19,8 +19,8 @@
 
 body {
   font-family: 'Arial', sans-serif; /* Fuente base */
-  background-color: var(--secondary-color) !important; /* Fondo oscuro principal FORZADO */
-  color: var(--text-color) !important; /* Color de texto blanco FORZADO */
+  background-color: var(--secondary-color); /* Fondo oscuro principal FORZADO */
+  color: var(--text-color); /* Color de texto blanco FORZADO */
   line-height: 1.6; /* Altura de línea para legibilidad */
 }
 
@@ -30,7 +30,7 @@ body {
 
 /* Estilos de encabezados */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text-color) !important; /* Color de texto blanco FORZADO */
+  color: var(--text-color); /* Color de texto blanco FORZADO */
   margin-top: 0;
   margin-bottom: 0.5rem;
   line-height: 1.2;
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Estilos de párrafo */
 p {
-  color: var(--light-gray) !important; /* Gris claro FORZADO */
+  color: var(--light-gray); /* Gris claro FORZADO */
 }
 
 /* Estilos genéricos para botones (si se usan fuera de componentes específicos) */
@@ -54,24 +54,24 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--primary-color) !important;
-  color: var(--text-color) !important;
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 .btn-primary:hover {
-  background-color: #c2005f !important; /* Fucsia más oscuro */
+  background-color: #c2005f; /* Fucsia más oscuro */
   transform: scale(1.05);
 }
 
 .btn-secondary {
-  background-color: var(--card-bg-color) !important;
-  color: var(--primary-color) !important;
-  border: 1px solid var(--primary-color) !important;
+  background-color: var(--card-bg-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 0, 124, 0.1) !important;
-  color: var(--text-color) !important;
+  background-color: rgba(255, 0, 124, 0.1);
+  color: var(--text-color);
   transform: scale(1.05);
 }
 
@@ -95,11 +95,11 @@ p {
 /* Para los iconos sociales (si se usan sin clases específicas de componentes) */
 .social-icon {
   font-size: 2rem;
-  color: var(--light-gray) !important;
+  color: var(--light-gray);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icon:hover {
-  color: var(--primary-color) !important;
+  color: var(--primary-color);
   transform: translateY(-5px);
 }
