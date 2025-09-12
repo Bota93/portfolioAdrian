@@ -1,23 +1,23 @@
 .contact {
     padding: 6rem 1rem;
-    background-color: #0e0e12;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .contact-title {
     font-size: 2.5rem;
     font-weight: bold;
-    color: white;
+    color: var(--primary-color);
     text-align: center; 
 }
 
 /* Contenedor principal del formulario, ahora con efecto hover */
 .container-contact {
-    background-color: #111118;
+    background-color: var(--background-color);
     border-radius: 20px;
     padding: 3rem;
-    box-shadow: 0 4px 30px rgba(255, 0, 124, 0.2);
-    border: 1px solid #ff007c;
+    box-shadow: 0 4px 30px rgba(86, 163, 166, 0.2);
+    border: 1px solid var(--primary-color);
     max-width: 800px;
     width: 100%;
     margin: 3rem auto 0 auto;
@@ -26,7 +26,7 @@
 
 .container-contact:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 40px rgba(255, 0, 124, 0.4);
+    box-shadow: 0 4px 30px rgba(86, 163, 166, 0.4);
 }
 
 .contact-form {
@@ -50,17 +50,17 @@
     width: 100%;
     padding: 1rem;
     font-size: 1rem;
-    background-color: #1f1f29;
-    border: 1px solid #444;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--card-bg-color);
     border-radius: 10px;
-    color: #f1f1f1;
+    color: var(--text-color);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-name::placeholder,
 .contact-email::placeholder,
 .contact-message::placeholder {
-    color: #888;
+    color: var(--light-gray);
 }
 
 /* Efecto al hacer clic en un campo (focus) */
@@ -68,8 +68,8 @@
 .contact-email:focus,
 .contact-message:focus {
     outline: none;
-    border-color: #ff007c;
-    box-shadow: 0 0 15px rgba(255, 0, 124, 0.3);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(86, 163, 166, 0.3);
 }
 
 .contact-message {
@@ -82,8 +82,8 @@
     padding: 1rem 2rem;
     font-size: 1rem;
     font-weight: 600;
-    color: white;
-    background-color: #ff007c;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -92,7 +92,7 @@
 }
 
 .contact-submit:hover {
-    background-color: #d6006c;
+    background-color: #4a8d8e;
     transform: scale(1.05);
 }
 
@@ -114,12 +114,12 @@
 
 .submission-message.success {
     background-color: rgba(26, 135, 84, 0.2);
-    color: #1aff8c;
+    color: #87cefa;
     border: 1px solid rgba(26, 135, 84, 0.5);
 }
 
 .submission-message.error {
     background-color: rgba(220, 53, 69, 0.2);
-    color: #ff8a8a;
+    color: #ffa07a;
     border: 1px solid rgba(220, 53, 69, 0.5);
 }
