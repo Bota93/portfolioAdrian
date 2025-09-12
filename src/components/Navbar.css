@@ -1,15 +1,15 @@
 .navbar {
-    background-color: var(--primary-color) !important; /* Fondo fucsia sólido, ¡FORZADO! */
-    height: 80px !important; /* Altura forzada */
-    display: flex !important; /* Display flex forzado */
-    justify-content: center !important; /* Centra el navbar-container */
-    align-items: center !important; /* Centra verticalmente el navbar-container */
+    background-color: var(--primary-color); /* Fondo fucsia sólido, ¡FORZADO! */
+    height: 80px; /* Altura forzada */
+    display: flex; /* Display flex forzado */
+    justify-content: center; /* Centra el navbar-container */
+    align-items: center; /* Centra verticalmente el navbar-container */
     font-size: 1.2rem;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 1000 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave para profundidad */
 
     /* Eliminamos transiciones de background-color, backdrop-filter y el efecto 'scrolled' */
@@ -25,11 +25,11 @@
 .navbar-container {
     max-width: 1200px;
     width: 100%;
-    height: 100% !important; /* Ocupa la altura completa del navbar, ¡FORZADO! */
-    display: flex !important;
-    justify-content: space-between !important; /* Logo izquierda, menú derecha, ¡FORZADO! */
-    align-items: center !important; /* Centra verticalmente logo y menú, ¡FORZADO! */
-    padding: 0 20px !important;
+    height: 100%; /* Ocupa la altura completa del navbar, ¡FORZADO! */
+    display: flex;
+    justify-content: space-between; /* Logo izquierda, menú derecha, ¡FORZADO! */
+    align-items: center; /* Centra verticalmente logo y menú, ¡FORZADO! */
+    padding: 0 20px;
 }
 
 .navbar-brand {
