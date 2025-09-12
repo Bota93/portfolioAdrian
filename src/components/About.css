@@ -1,17 +1,17 @@
 .about {
     padding: 6rem 1rem;
-    background-color: #0e0e12;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
 }
 
 .about-container {
-    background-color: #111118;
+    background-color: var(--card-bg-color);
     border-radius: 20px;
     padding: 3rem;
     box-shadow: 0 4px 30px rgba(255, 0, 124, 0.2);
-    border: 1px solid #ff007c;
+    border: 1px solid var(--primary-color);
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
@@ -23,15 +23,15 @@
 
 .about-container:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 40px rgba(255, 0, 124, 0.4);
+    box-shadow: 0 8px 40px rgba(86, 163, 166, 0.4);
 }
 
 .about-image {
     max-width: 220px;
     width: 100%;
     border-radius: 12px;
-    border: 2px solid #ff007c;
-    box-shadow: 0 4px 20px rgba(247, 37, 133, 0.5);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 8px 40px rgba(86, 163, 166, 0.4);
     margin-bottom: 2rem;
     overflow: hidden;
 }
